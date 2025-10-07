@@ -1,0 +1,26 @@
+<div class="tabs-container">
+  <div class="tabs">
+    <div
+      *ngFor="let tab of tabs"
+      class="tab"
+      [class.active]="tab.id === activeTabId"
+      (click)="selectTab(tab.id)"
+    >
+      {{ tab.title }}
+    </div>
+  </div>
+
+  <!-- tab contents -->
+  <div class="tab-contents">
+    <div
+      *ngFor="let tab of tabs"
+      class="tab-content"
+      [class.active]="tab.id === activeTabId"
+      [ngStyle]="{
+        'background-color': tab.id === activeTabId ? tab.contentColor : ''
+      }"
+    >
+      {{ tab.content }}
+    </div>
+  </div>
+</div>
