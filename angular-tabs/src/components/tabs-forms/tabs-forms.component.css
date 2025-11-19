@@ -1,0 +1,48 @@
+.tabs-container {
+  padding: 10px 20px;
+}
+.tabs {
+  display: flex;
+}
+
+.tab {
+  width: 50px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgb(208, 204, 204);
+}
+
+.tab.active {
+  background-color: beige;
+}
+
+.tab:hover {
+  background-color: rgb(236, 229, 229);
+}
+
+.tab-content {
+  width: 800px;
+  padding: 10px 20px;
+  height: 300px;
+  display: none;
+  background-color: rgb(219, 238, 255);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.form-input {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-input label {
+  margin-right: 30px;
+  text-wrap: nowrap;
+  font-weight: bold;
+  width: 70px;
+}

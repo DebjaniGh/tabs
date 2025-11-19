@@ -1,0 +1,42 @@
+<div class="tabs-container">
+  <!-- tab titles -->
+  <div class="tabs">
+    <div
+      class="tab"
+      *ngFor="let tab of tabs"
+      [class.active]="activeTabId === tab.id"
+      (click)="selectTab(tab.id)"
+    >
+      {{ tab.title }}
+    </div>
+  </div>
+
+  <!-- tab contents -->
+  <div class="tab-contents">
+    <div
+      class="tab-content"
+      *ngFor="let tab of tabs"
+      [class.active]="activeTabId === tab.id"
+    >
+      <form [formGroup]="tab.formGroup">
+        <div class="form-input" *ngFor="let control of tab.formControls">
+          <label>{{ control.label }}</label>
+          <input type="control.type" [formControlName]="control.name" />
+        </div>
+
+        <!-- submit btn on last tab -->
+        <button
+          type="submit"
+          *ngIf="tab.id === tabs.length"
+          class="btn"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <div *ngIf="tab.id === tabs.length">
+          {{ formData }}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

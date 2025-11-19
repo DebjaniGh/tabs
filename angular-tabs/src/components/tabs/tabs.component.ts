@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
-export interface tabsConfig {
+export interface Tab {
   id: number;
   title: string;
   content: string;
@@ -18,7 +18,7 @@ export interface tabsConfig {
 export class TabsComponent {
   activeTabId: number = 1;
 
-  tabs: tabsConfig[] = [
+  tabs: Tab[] = [
     {
       id: 1,
       title: 'Tab 1',
